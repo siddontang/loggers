@@ -14,7 +14,7 @@ func init() {
 }
 
 // ParseLevel parses the level
-func ParseLevel(s string) mapper.Level {
+func ParseLevel(s string) mappers.Level {
 	return mappers.ParseLevel(s)
 }
 
