@@ -2,6 +2,7 @@ package log
 
 import (
 	"gopkg.in/birkirb/loggers.v1"
+	"gopkg.in/birkirb/loggers.v1/mappers"
 	"gopkg.in/birkirb/loggers.v1/mappers/stdlib"
 )
 
@@ -10,6 +11,18 @@ var Logger loggers.Contextual
 
 func init() {
 	Logger = stdlib.NewDefaultLogger()
+}
+
+// ParseLevel parses the level
+func ParseLevel(s string) mapper.Level {
+	return mappers.ParseLevel(s)
+}
+
+// SetLevel changes the level
+func SetLevel(l mappers.Level) {
+	if l, ok := Logger.(mappers.LevelSetter); ok {
+		l.SetLevel(l)
+	}
 }
 
 // Debug should be used when logging exessive debug info.
