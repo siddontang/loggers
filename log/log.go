@@ -20,8 +20,8 @@ func ParseLevel(s string) mapper.Level {
 
 // SetLevel changes the level
 func SetLevel(l mappers.Level) {
-	if l, ok := Logger.(mappers.LevelSetter); ok {
-		l.SetLevel(l)
+	if logger, ok := Logger.(mappers.LevelSetter); ok {
+		logger.SetLevel(l)
 	}
 }
 

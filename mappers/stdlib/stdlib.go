@@ -41,8 +41,8 @@ func NewLogger(l *log.Logger) loggers.Contextual {
 }
 
 // SetLevel implements LevelSetter interface
-func (l *goLog) SetLevel(l mappers.Level) {
-	l.level = l
+func (l *goLog) SetLevel(level mappers.Level) {
+	l.level = level
 }
 
 // LevelPrint is a Mapper method
